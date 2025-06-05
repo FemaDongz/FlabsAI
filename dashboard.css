@@ -1,0 +1,68 @@
+body {
+    background-color: #000;
+    color: #0f0; /* Green text */
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #111;
+    padding: 10px 20px;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #0f0;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#terminal {
+    border: 1px solid #333;
+    padding: 10px;
+    height: calc(100% - 40px); /* Adjust based on padding */
+    overflow-y: auto;
+    background-color: #050505;
+}
+
+#output div {
+    margin-bottom: 5px;
+    white-space: pre-wrap; /* Preserve whitespace and wrap lines */
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    margin-right: 5px;
+}
+
+#commandInput {
+    background-color: transparent;
+    border: none;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    flex-grow: 1;
+    outline: none; /* Remove default focus outline */
+}
+
+footer {
+    background-color: #111;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.8em;
+}
