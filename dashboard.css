@@ -1,68 +1,242 @@
-body {
-    background-color: #000;
-    color: #0f0; /* Green text */
-    font-family: 'Courier New', Courier, monospace;
+/* Basic Reset & Root Variables */
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --bg-color-dark: #1a1a2e; /* Dark blue/purple */
+    --surface-color-dark: #1e1e3f; /* Slightly lighter surface */
+    --card-bg-dark: #272953; /* Card background */
+    --text-color-dark: #e0e0ff; /* Light lavender text */
+    --text-color-secondary-dark: #a0a0d0; /* Muted lavender */
+    --accent-color: #4a47a3; /* Indigo accent */
+    --accent-color-light: #7879f1;
+    --border-color-dark: #3b3c6e;
+    --shadow-color-dark: rgba(0, 0, 0, 0.2);
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+
+    /* Add light theme variables later if needed */
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    display: flex; /* For sticky footer */
+    flex-direction: column; /* For sticky footer */
+    min-height: 100vh; /* For sticky footer */
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1600px; /* Max width for the dashboard content */
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    flex-grow: 1; /* For sticky footer */
 }
 
-header {
-    background-color: #111;
-    padding: 10px 20px;
-    border-bottom: 1px solid #333;
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color-dark);
+    margin-bottom: 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #0f0;
+.dashboard-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color-dark);
 }
 
-main {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-#terminal {
-    border: 1px solid #333;
-    padding: 10px;
-    height: calc(100% - 40px); /* Adjust based on padding */
-    overflow-y: auto;
-    background-color: #050505;
-}
-
-#output div {
-    margin-bottom: 5px;
-    white-space: pre-wrap; /* Preserve whitespace and wrap lines */
-}
-
-.input-line {
+.header-actions {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
-.prompt {
-    margin-right: 5px;
-}
-
-#commandInput {
-    background-color: transparent;
+.icon-button {
+    background: none;
     border: none;
-    color: #0f0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1em;
-    flex-grow: 1;
-    outline: none; /* Remove default focus outline */
+    color: var(--text-color-secondary-dark);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-footer {
-    background-color: #111;
-    padding: 10px 20px;
+.icon-button:hover {
+    background-color: var(--surface-color-dark);
+    color: var(--text-color-dark);
+}
+
+.icon-button svg {
+    display: block; /* Removes extra space below SVG */
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color-light);
+    object-fit: cover;
+}
+
+/* Main Content Area */
+.dashboard-main {
+    flex-grow: 1; /* For sticky footer */
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-bg-dark);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px var(--shadow-color-dark);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 1px solid var(--border-color-dark);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color-dark);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color-dark);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.card-icon { /* For icons within card headers */
+    color: var(--accent-color-light);
+}
+
+.card-content p {
+    margin-bottom: 10px;
+    color: var(--text-color-secondary-dark);
+    font-size: 0.9rem;
+}
+
+.card-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Placeholder for specific widget styles */
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color-dark);
+}
+.stat-item:last-child {
+    border-bottom: none;
+}
+.stat-item .label {
+    color: var(--text-color-secondary-dark);
+}
+.stat-item .value {
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.activity-feed .feed-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    border-bottom: 1px dashed var(--border-color-dark);
+}
+.activity-feed .feed-item:last-child {
+    border-bottom: none;
+}
+.activity-feed .feed-item-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--surface-color-dark);
+}
+.activity-feed .feed-item-icon svg{
+     width: 14px;
+    height: 14px;
+    fill: var(--accent-color-light);
+}
+.activity-feed .feed-item-text {
+    flex-grow: 1;
+    color: var(--text-color-secondary-dark);
+}
+.activity-feed .feed-item-time {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+}
+
+.quick-actions-list {
+    list-style: none;
+    padding: 0;
+}
+.quick-actions-list li a {
+    display: block;
+    padding: 10px 0;
+    color: var(--accent-color-light);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dashed var(--border-color-dark);
+    transition: color 0.2s;
+}
+.quick-actions-list li:last-child a {
+    border-bottom: none;
+}
+.quick-actions-list li a:hover {
+    color: var(--text-color-dark);
+}
+
+
+/* Footer */
+.dashboard-footer {
     text-align: center;
-    border-top: 1px solid #333;
-    font-size: 0.8em;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color-dark);
+    color: var(--text-color-secondary-dark);
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
 }
