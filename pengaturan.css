@@ -1,0 +1,96 @@
+/* pengaturan.css */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    font-family: var(--font-primary);
+}
+.page-container {
+    width: 100%;
+    max-width: 800px; /* Settings page can be narrower */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px; /* More space for settings sections */
+}
+.page-header h1 {
+    color: var(--text-color-primary);
+    font-size: 1.8rem;
+}
+.page-main {
+    flex-grow: 1;
+}
+
+.settings-section {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-large);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px var(--shadow-color-soft);
+    border: 1px solid var(--border-color);
+    transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+.settings-section:hover {
+    border-color: var(--border-color-light);
+    box-shadow: 0 6px 20px var(--shadow-color-medium); /* Slightly more pronounced shadow */
+}
+.section-title {
+    font-size: 1.4rem;
+    color: var(--text-color-primary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color-light);
+}
+.setting-item {
+    margin-bottom: 20px;
+}
+.setting-item:last-child {
+    margin-bottom: 0;
+}
+.setting-item label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-color-secondary);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+.setting-description {
+    font-size: 0.8rem;
+    color: var(--text-color-tertiary);
+    margin-top: 8px;
+}
+.theme-switcher-placeholder {
+    display: flex;
+    gap: 10px;
+}
+.theme-switcher-placeholder .theme-btn {
+    padding: 0.5em 1em;
+    font-size: 0.85rem;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    /* transition from core.css .button-base should apply if class is used, otherwise add here */
+    transition: background-color var(--transition-normal), color var(--transition-normal), border-color var(--transition-normal), transform var(--transition-fast), box-shadow var(--transition-normal);
+}
+.theme-switcher-placeholder .theme-btn.active {
+    background-color: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.page-footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    font-size: 0.9rem;
+}

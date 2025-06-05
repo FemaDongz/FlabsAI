@@ -86,6 +86,7 @@
             transform: translate(-50%, -50%) scale(0.3);
             width: 80px;
             opacity: 0;
+            /* Ensured transform is part of the transition for pulsing */
             transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
                         transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
                         width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -1513,30 +1514,26 @@
         <div class="sidebar-content">
             <div class="category-title">Utama</div>
             <ul>
-                <li><a href="error.html">
+                <li><a href="dashboard.html">
                     <svg viewBox="0 0 24 24"><path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"></path></svg>
                     Dashboard
                 </a></li>
-                <li><a href="dashboard.html">
-                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M13 3H6c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V9l-7-6zm0 16H6V5h6v4h4v10zM4 21.5A1.5 1.5 0 012.5 20V4A1.5 1.5 0 014 2.5h10.5l5.5 5.5V20a1.5 1.5 0 01-1.5 1.5H4zM12 11h-2v2H8v-2H6v-2h2V7h2v2h2v2z"></path></svg>
-                    Modern Dashboard
-                </a></li>
-                <li><a href="error.html">
+                <li><a href="pengaturan.html">
                     <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42.12-.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49.42l.38-2.65c.61-.25 1.17-.59 1.69.98l2.49 1c.23.08.49 0-.61.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg>
                     Pengaturan Chat
                 </a></li>
-                <li><a href="error.html">
+                <li><a href="riwayat.html">
                     <svg viewBox="0 0 24 24"><path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.25 2.52.77-1.28-3.52-2.09V8z"></path></svg>
                     Riwayat Percakapan
                 </a></li>
             </ul>
             <div class="category-title">Alat AI & Utilitas</div>
             <ul>
-                <li><a href="/flashcard" target="_blank"> <!-- User said ImageAI icon (which is a palette) is good, applying similar to FlashCard -->
+                <li><a href="flashcard.html"> <!-- User said ImageAI icon (which is a palette) is good, applying similar to FlashCard -->
                     <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5.67 1.5 1.5S12.83 24 12 24s-1.5-.67-1.5-1.5c0-4.97-4.03-9-9-9s-9-4.03-9-9 4.03-9 9-9c.83 0 1.5.67 1.5 1.5S12.83 3 12 3zm0 2c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.14-7-7 3.14-7 7-7zm0 3c-.83 0-1.5.67-1.5 1.5S11.17 11 12 11s1.5-.67 1.5-1.5S12.83 8 12 8zm-3 3c-.83 0-1.5.67-1.5 1.5S8.17 14 9 14s1.5-.67 1.5-1.5S9.83 11 9 11zm6 0c-.83 0-1.5.67-1.5 1.5S14.17 14 15 14s1.5-.67 1.5-1.5S15.83 11 15 11zm-3 3c-.83 0-1.5.67-1.5 1.5S11.17 17 12 17s1.5-.67 1.5-1.5S12.83 14 12 14z"></path></svg>
                     FlashCard AI
                 </a></li>
-                <li><a href="error.html" id="file-converter-link">
+                <li><a href="convert.html" id="file-converter-link">
                     <svg viewBox="0 0 24 24"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"></path></svg>
                     Convert File
                 </a></li>
@@ -1547,7 +1544,7 @@
             </ul>
              <div class="category-title">Lainnya</div>
             <ul>
-                <li><a href="error.html">
+                <li><a href="tentang.html">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
                     Tentang FlabsAI
                 </a></li>
@@ -1906,6 +1903,28 @@
     </script>
 
     <script type="module">
+        const flabsUsername = localStorage.getItem('flabsai_username');
+        if (!flabsUsername) {
+            window.location.href = 'login.html';
+        } else {
+            // Attempt to display username in sidebar
+            const sidebarContent = document.querySelector('#sidebar .sidebar-content');
+            if (sidebarContent) {
+                const welcomeUserDiv = document.createElement('div');
+                welcomeUserDiv.className = 'sidebar-welcome-user';
+                welcomeUserDiv.style.padding = '10px 15px';
+                welcomeUserDiv.style.fontSize = '0.9em';
+                welcomeUserDiv.style.fontWeight = '500';
+                welcomeUserDiv.style.borderBottom = '1px solid var(--border-color)';
+                welcomeUserDiv.style.marginBottom = '10px';
+                welcomeUserDiv.textContent = `Welcome, ${flabsUsername}!`;
+                if (sidebarContent.firstChild) {
+                    sidebarContent.insertBefore(welcomeUserDiv, sidebarContent.firstChild);
+                } else {
+                    sidebarContent.appendChild(welcomeUserDiv);
+                }
+            }
+        }
         import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
         import DOMPurify from 'dompurify';
         import Tesseract from 'tesseract.js';
@@ -1939,7 +1958,7 @@
         let loading_DELAY_AFTER_TEXT_END_val;
         let loading_targetLogoLeftPx_val;
 
-        const ACTUAL_API_KEY = "AIzaSyCABGEFl5t2vimo69p6JrJr0kHVI5HujmE"; 
+        const ACTUAL_API_KEY = "AIzaSyCABGEFl5t2vimo69p6JrJr0kHVI5HujmE";
         const SCRAPER_PHP_URL = "https://femzlabs.unaux.com/scraper.php"; 
 
         const CHATAI_MODEL_NAME = "gemini-2.5-flash-preview-05-20"; 
@@ -1972,6 +1991,9 @@
 
         let currentGeminiModelName = CHATAI_MODEL_NAME;
         let currentAppMode = 'chatai';
+
+        const CHAT_HISTORY_KEY = 'flabs_chatHistory';
+        let localChatHistory = JSON.parse(localStorage.getItem(CHAT_HISTORY_KEY) || '[]');
 
         const TYPING_SPEED_MS_PER_CHAR = 5;
         const TYPING_BATCH_CHARS = 20;
@@ -2165,24 +2187,24 @@
             loading_SHARD_SPREAD_MIN_val = 45;
             loading_SHARD_SPREAD_MAX_val = 110;
             loading_speedFactor_val = 1.5;
-            loading_D_LOGO_APPEAR_GROW_val = 1200 / loading_speedFactor_val;
-            loading_D_LOGO_SHRINK_SLIGHTLY_val = 600 / loading_speedFactor_val;
-            loading_D_SHARDS_BURST_val = 800 / loading_speedFactor_val;
+            loading_D_LOGO_APPEAR_GROW_val = 1000 / loading_speedFactor_val;
+            loading_D_LOGO_SHRINK_SLIGHTLY_val = 500 / loading_speedFactor_val;
+            loading_D_SHARDS_BURST_val = 900 / loading_speedFactor_val;
             loading_D_SHARDS_FADE_val = 700 / loading_speedFactor_val;
             loading_D_LOGO_MOVE_LEFT_val = 1000 / loading_speedFactor_val;
             loading_D_TEXT_CONTAINER_APPEAR_val = 400 / loading_speedFactor_val;
             loading_D_TEXT_CHAR_TRANSITION_val = 500 / loading_speedFactor_val;
             loading_D_TEXT_CHAR_STAGGER_DELAY_val = 100 / loading_speedFactor_val;
-            loading_D_OVERLAY_SLIDE_DOWN_val = 1200;
+            loading_D_OVERLAY_SLIDE_DOWN_val = 1000;
             loading_DELAY_START_val = 300 / loading_speedFactor_val;
-            loading_DELAY_LOGO_GROW_TO_SHRINK_val = 150 / loading_speedFactor_val;
+            loading_DELAY_LOGO_GROW_TO_SHRINK_val = 50 / loading_speedFactor_val;
             loading_DELAY_SHARDS_START_OFFSET_val = 150 / loading_speedFactor_val;
             loading_D_TOTAL_SHARD_LIFESPAN_val = loading_D_SHARDS_BURST_val + loading_D_SHARDS_FADE_val + (100 / loading_speedFactor_val);
             loading_DELAY_LOGO_SHRINK_TO_MOVE_val = 200 / loading_speedFactor_val;
             loading_DELAY_AFTER_LOGO_MOVED_AND_SHARDS_STARTED_FADING_val = 50 / loading_speedFactor_val;
             loading_DELAY_TEXT_CONTAINER_TO_CHARS_ANIM_val = 50 / loading_speedFactor_val;
-            loading_TOTAL_TEXT_ANIMATION_DURATION_val = (loading_textToType_val.length - 1) * loading_D_TEXT_CHAR_STAGGER_DELAY_val + loading_D_TEXT_CHAR_TRANSITION_val;
-            loading_DELAY_AFTER_TEXT_END_val = 500;
+            loading_TOTAL_TEXT_ANIMATION_DURATION_val = (loading_textToType_val.length - 1) * loading_D_TEXT_CHAR_STAGGER_DELAY_val + (loading_D_TEXT_CHAR_TRANSITION_val * 1.2);
+            loading_DELAY_AFTER_TEXT_END_val = 600 / loading_speedFactor_val;
 
             let currentTime = loading_DELAY_START_val;
             const logoAppearStartTime = currentTime;
@@ -2195,14 +2217,36 @@
             const shardsActualStartTime = logoAppearStartTime + loading_DELAY_SHARDS_START_OFFSET_val;
             const shardsBurstEndTime = shardsActualStartTime + loading_D_SHARDS_BURST_val;
             const logoAppearEndTime = logoAppearStartTime + loading_D_LOGO_APPEAR_GROW_val;
-            currentTime = logoAppearEndTime + loading_DELAY_LOGO_GROW_TO_SHRINK_val;
+
+            const pulseDownDuration = 150 / loading_speedFactor_val;
+            const pulseUpDuration = 150 / loading_speedFactor_val;
+            const pulseTotalDuration = pulseDownDuration + pulseUpDuration + (50 / loading_speedFactor_val); // Added small buffer
+
+            const pulseStartTime = logoAppearEndTime + (100 / loading_speedFactor_val);
+
+            setTimeout(() => {
+                // Ensure logo transition includes transform for the pulse itself
+                loadingLogoEl.style.transition = `opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform ${pulseDownDuration/1000}s ease-in-out, width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.667s cubic-bezier(0.42, 0, 0.58, 1)`;
+                loadingLogoEl.style.transform = 'translate(-50%, -50%) scale(1.05)'; // Scale down
+
+                setTimeout(() => {
+                    loadingLogoEl.style.transition = `opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform ${pulseUpDuration/1000}s ease-in-out, width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.667s cubic-bezier(0.42, 0, 0.58, 1)`;
+                    loadingLogoEl.style.transform = 'translate(-50%, -50%) scale(1.12)'; // Scale back up slightly
+                }, pulseDownDuration);
+            }, pulseStartTime);
+
+            currentTime = pulseStartTime + pulseTotalDuration + loading_DELAY_LOGO_GROW_TO_SHRINK_val;
+
             const logoShrinkStartTime = currentTime;
             setTimeout(() => {
+                // Restore original transition before shrinking and moving
+                loadingLogoEl.style.transition = `opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.667s cubic-bezier(0.42, 0, 0.58, 1)`;
                 loadingLogoEl.style.transform = 'translate(-50%, -50%) scale(1)';
                 loadingLogoEl.style.width = '80px';
             }, logoShrinkStartTime);
+
             const logoShrinkEndTime = logoShrinkStartTime + loading_D_LOGO_SHRINK_SLIGHTLY_val;
-            currentTime = logoShrinkEndTime + loading_DELAY_LOGO_SHRINK_TO_MOVE_val;
+            currentTime = logoShrinkEndTime + loading_DELAY_LOGO_SHRINK_TO_MOVE_val; // This delay might need slight adjustment
             const logoMoveStartTime = currentTime;
             const logoFinalWidth = 80;
             const logoTargetLeftPercent = 0.235;
@@ -2302,9 +2346,23 @@
                                 
                                 currentBubble.querySelector('.pollinations-image-display-container').classList.remove('loading-initial');
 
+                                // --- SAVE PROCESSED ImageAI to localChatHistory (from Worker 'complete') ---
+                                const flabsUsernameForWorkerAI = localStorage.getItem('flabsai_username') || 'Guest';
+                                const workerAiImageEntry = {
+                                    role: 'model',
+                                    username: flabsUsernameForWorkerAI,
+                                    parts: [{text: `[ImageAI generated content for prompt: "${imageAIData.prompt}"]`}],
+                                    timestamp: new Date().toISOString(),
+                                    imageMeta: `Model: ${imageAIData.model}, Ratio: ${imageAIData.aspectRatio}`,
+                                    isProcessedImage: true
+                                };
+                                localChatHistory.push(workerAiImageEntry);
+                                localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(localChatHistory));
+                                // --- End SAVE PROCESSED ImageAI ---
 
                                 addMessageActions(parentMessageDiv, `[Gambar (2x upscaled) diproses untuk: ${imageAIData.prompt}]`, imageAIData, true);
-                                addMessageToChatHistory("model", [{ text: `Image (2x upscaled) processed for: ${imageAIData.prompt}` }], null, `Processed (2x Upscaled) - Model: ${imageAIData.model}, Ratio: ${imageAIData.aspectRatio}`, true);
+                                // The existing addMessageToChatHistory is for AI context, not persistent history.
+                                // addMessageToChatHistory("model", [{ text: `Image (2x upscaled) processed for: ${imageAIData.prompt}` }], null, `Processed (2x Upscaled) - Model: ${imageAIData.model}, Ratio: ${imageAIData.aspectRatio}`, true);
                              }
                         } else if (currentBubble && !currentBubble.closest('.message')) {
                             console.warn("Worker completed, but its target bubble (temporaryThinkingBubble) was removed from DOM, likely due to user abort.");
@@ -3622,13 +3680,15 @@
                     element.innerHTML = DOMPurify.sanitize(currentContent, domPurifyConfig);
                     const textForCopy = extractTextAndArtifactsForCopy(currentContent, element);
                     addMessageActions(element.closest('.message'), textForCopy);
-                    if (onComplete) onComplete(true); return;
+                    if (onComplete) onComplete(true); return; // Aborted
                 }
-                if (index >= fragments.length) {
+                if (index >= fragments.length) { // Typing normally completed
                     element.innerHTML = DOMPurify.sanitize(currentContent, domPurifyConfig);
                     const textForCopy = extractTextAndArtifactsForCopy(currentContent, element);
                     addMessageActions(element.closest('.message'), textForCopy);
-                    if (onComplete) onComplete(false); return;
+
+                    if (onComplete) onComplete(false, currentContent); // Pass final content
+                    return;
                 }
                 const fragment = fragments[index];
                 if (fragment.startsWith('<')) {
@@ -3643,9 +3703,9 @@
                             if (element && element.querySelector) element.querySelector('.typing-cursor')?.remove();
                             currentContent += fragment.substring(charIndex);
                             element.innerHTML = DOMPurify.sanitize(currentContent, domPurifyConfig);
-                             const textForCopy = extractTextAndArtifactsForCopy(currentContent, element);
-                            addMessageActions(element.closest('.message'), textForCopy); 
-                            if (onComplete) onComplete(true); return;
+                            const textForCopyAborted = extractTextAndArtifactsForCopy(currentContent, element);
+                            addMessageActions(element.closest('.message'), textForCopyAborted);
+                            if (onComplete) onComplete(true); return; // Aborted during text fragment
                          }
                         while(charIndex < fragment.length && charsInBatch < TYPING_BATCH_CHARS) { textBuffer += fragment[charIndex]; charIndex++; charsInBatch++; }
                         currentContent += textBuffer; textBuffer = ''; charsInBatch = 0;
@@ -3830,6 +3890,18 @@
                     aiHtmlText = `<p><b>Respons tidak dapat ditampilkan:</b> Konten diblokir. (${response.promptFeedback.blockReason})</p>`;
                     aiResponseParts = [{text: aiHtmlText}];
                     if(currentAiMessageBubble.closest('.message')) currentAiMessageBubble.closest('.message').classList.add("error-message");
+
+                    // --- SAVE BLOCKED AI RESPONSE to localChatHistory ---
+                    const flabsUsernameForBlockedAI = localStorage.getItem('flabsai_username') || 'Guest';
+                    const blockedAiEntry = {
+                        role: 'model',
+                        username: flabsUsernameForBlockedAI,
+                        parts: [{ text: `[AI response blocked: ${response.promptFeedback.blockReason}]` }],
+                        timestamp: new Date().toISOString()
+                    };
+                    localChatHistory.push(blockedAiEntry);
+                    localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(localChatHistory));
+                    // --- End SAVE BLOCKED AI RESPONSE ---
                 }
                 else if (isDeepThinking && !aiHtmlText.toLowerCase().includes("deepthink mode:") && !aiHtmlText.toLowerCase().includes("mode berpikir mendalam:")) {
                     aiHtmlText = `<p><b><i>Mode Berpikir Mendalam:</i></b></p>${aiHtmlText.trim().toLowerCase().startsWith("<p>") || aiHtmlText.trim().toLowerCase().startsWith("<ul") || aiHtmlText.trim().toLowerCase().startsWith("<ol") ? aiHtmlText : `<p>${aiHtmlText}</p>`}`;
@@ -3839,10 +3911,23 @@
                 }
 
                 if (aiHtmlText && aiHtmlText.trim() !== "") {
-                    await typeOutHTML(currentAiMessageBubble, aiHtmlText, (wasAborted) => {
-                        if (!wasAborted) {
+                    await typeOutHTML(currentAiMessageBubble, aiHtmlText, (wasAborted, finalHtmlContent) => {
+                        if (!wasAborted && finalHtmlContent) {
+                            // --- SAVE Normal ChatAI RESPONSE to localChatHistory (after typeOutHTML) ---
+                            const flabsUsernameForAI = localStorage.getItem('flabsai_username') || 'Guest';
+                            const aiMessageEntry = {
+                                role: 'model',
+                                username: flabsUsernameForAI,
+                                parts: [{ text: finalHtmlContent }], // Use the fully typed out HTML
+                                timestamp: new Date().toISOString()
+                            };
+                            localChatHistory.push(aiMessageEntry);
+                            localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(localChatHistory));
+                            // --- End SAVE Normal ChatAI RESPONSE ---
+
+                            // Keep existing logic for AI context history
                             addMessageToChatHistory("user", [{ text: currentTurnUserIntent.text }], currentTurnUserIntent.attachmentInfo ? { name: currentTurnUserIntent.attachmentInfo.name, type: currentTurnUserIntent.attachmentInfo.type, previewHTML: currentTurnUserIntent.attachmentInfo.previewHTML, dataUrl: currentTurnUserIntent.attachmentInfo.dataUrl } : null);
-                            addMessageToChatHistory("model", aiResponseParts);
+                            addMessageToChatHistory("model", aiResponseParts); // aiResponseParts is fine for AI context
                         }
                         currentTurnUserIntent = { text: null, attachmentInfo: null };
                         currentAiMessageBubble = null;
@@ -3854,8 +3939,23 @@
                 } else {
                      currentAiMessageBubble.innerHTML = DOMPurify.sanitize("<p><i>Respons kosong atau tidak dikenal.</i></p>", domPurifyConfig);
                      addMessageActions(currentAiMessageBubble.closest('.message'), "Respons kosong atau tidak dikenal.");
+
+                    // --- Save this "empty/unknown" AI response to localChatHistory ---
+                    const flabsUsernameForEmptyAI = localStorage.getItem('flabsai_username') || 'Guest';
+                    const emptyAiEntry = {
+                        role: 'model',
+                        username: flabsUsernameForEmptyAI,
+                        parts: [{ text: "[AI response was empty or unknown]" }],
+                        timestamp: new Date().toISOString()
+                    };
+                    localChatHistory.push(emptyAiEntry);
+                    localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(localChatHistory));
+                    // --- End SAVE empty AI response ---
+
+                     // Keep existing logic for AI context history
                      addMessageToChatHistory("user", [{ text: currentTurnUserIntent.text }], currentTurnUserIntent.attachmentInfo ? { name: currentTurnUserIntent.attachmentInfo.name, type: currentTurnUserIntent.attachmentInfo.type, previewHTML: currentTurnUserIntent.attachmentInfo.previewHTML, dataUrl: currentTurnUserIntent.attachmentInfo.dataUrl } : null);
                      addMessageToChatHistory("model", [{text: "Respons kosong atau tidak dikenal."}]);
+
                      currentTurnUserIntent = { text: null, attachmentInfo: null };
                      isTypingAnimationActive = false; setButtonStateForProcessing(false);
                      currentAiMessageBubble = null;
@@ -3885,6 +3985,18 @@
                     tempDiv.innerHTML = DOMPurify.sanitize(userFriendlyErrorMessage, domPurifyConfig);
                     addMessageActions(errorBubbleContent.closest('.message'), tempDiv.textContent || tempDiv.innerText || "");
                 }
+
+                // --- SAVE ERROR AI RESPONSE to localChatHistory ---
+                const flabsUsernameForErrorAI = localStorage.getItem('flabsai_username') || 'Guest';
+                const errorAiEntry = {
+                    role: 'model',
+                    username: flabsUsernameForErrorAI,
+                    parts: [{ text: `[AI Error: ${userFriendlyErrorMessage.replace(/<[^>]+>/g, ' ').substring(0,150)}...]` }], // Store a summary
+                    timestamp: new Date().toISOString()
+                };
+                localChatHistory.push(errorAiEntry);
+                localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(localChatHistory));
+                // --- End SAVE ERROR AI RESPONSE ---
 
                 isTypingAnimationActive = false; setButtonStateForProcessing(false);
                 currentAiMessageBubble = null; currentTurnUserIntent = { text: null, attachmentInfo: null };
@@ -4212,6 +4324,32 @@
 
             if (isManualInput) {
                 addMessageToUI("user", currentTurnUserIntent.text, false, attachmentDisplayInfoForUI);
+
+                // --- Begin SAVE USER MESSAGE to localChatHistory ---
+                const flabsUsernameForUser = localStorage.getItem('flabsai_username') || 'Guest';
+                const userMessageEntry = {
+                    role: 'user',
+                    username: flabsUsernameForUser,
+                    parts: [{ text: currentTurnUserIntent.text || "" }], // Ensure text is not null
+                    timestamp: new Date().toISOString()
+                };
+                if (currentTurnUserIntent.attachmentInfo) {
+                    userMessageEntry.attachment = {
+                        name: currentTurnUserIntent.attachmentInfo.name,
+                        type: currentTurnUserIntent.attachmentInfo.type
+                    };
+                    let attachmentTextPart = `[Attached ${currentTurnUserIntent.attachmentInfo.type}: ${currentTurnUserIntent.attachmentInfo.name}]`;
+                    // Ensure parts[0].text exists and append to it
+                    if (userMessageEntry.parts[0].text && !userMessageEntry.parts[0].text.includes(attachmentTextPart)) {
+                        userMessageEntry.parts[0].text += ` ${attachmentTextPart}`;
+                    } else if (!userMessageEntry.parts[0].text) {
+                        userMessageEntry.parts[0].text = attachmentTextPart;
+                    }
+                }
+                localChatHistory.push(userMessageEntry);
+                localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(localChatHistory));
+                // --- End SAVE USER MESSAGE to localChatHistory ---
+
                 if(userInput) {
                     userInput.value = ""; 
                 }

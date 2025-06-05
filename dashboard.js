@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Dynamically set the current year in the footer
     const currentYearSpan = document.getElementById('currentYear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // Placeholder for any future dashboard-specific JavaScript interactions
-    console.log("Modern Dashboard JS Loaded");
-
-    // Example: Smooth scroll for internal links if any were added
-    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //     anchor.addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         document.querySelector(this.getAttribute('href')).scrollIntoView({
-    //             behavior: 'smooth'
-    //         });
-    //     });
-    // });
+    const flabsUsername = localStorage.getItem('flabsai_username');
+    if (!flabsUsername) {
+        window.location.href = 'login.html'; // Redirect if not logged in
+    } else {
+        const welcomeMessageSpan = document.getElementById('welcomeMessage');
+        if (welcomeMessageSpan) {
+            welcomeMessageSpan.textContent = `User: ${flabsUsername}`;
+        }
+        const welcomeCardTitle = document.getElementById('welcomeCardTitle');
+        if (welcomeCardTitle){
+            welcomeCardTitle.textContent = `Welcome, ${flabsUsername}!`;
+        }
+    }
+    console.log("Modern Dashboard JS Loaded with username: ", flabsUsername);
 });

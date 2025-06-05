@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About FlabsAI - FlabsAI</title>
+    <link rel="stylesheet" href="core.css">
+    <link rel="stylesheet" href="toolpage.css"> <!-- Using generic styles -->
+    <style>
+        /* Additional styles specific to about page if needed, or can be in toolpage.css */
+        .about-content {
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: var(--border-radius-large);
+            box-shadow: 0 4px 15px var(--shadow-color-soft);
+            border: 1px solid var(--border-color);
+            text-align: left; /* Override centered tool-placeholder if that's the case */
+        }
+        .about-content h2 {
+            font-size: 1.5rem;
+            color: var(--text-color-primary);
+            margin-bottom:15px;
+            border-bottom: 1px solid var(--border-color-light);
+            padding-bottom:10px;
+        }
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: var(--text-color-secondary);
+        }
+        .about-content strong {
+            color: var(--text-color-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container tool-page-container"> <!-- Ensure this class is used for layout -->
+        <header class="page-header">
+            <h1>About FlabsAI</h1>
+            <a href="index.html" class="button-base button-secondary" style="font-size: 0.85rem;">Back to Chat</a>
+        </header>
+
+        <main class="page-main" style="align-items: flex-start;"> <!-- Override align-items for this page -->
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p><strong>FlabsAI</strong> is dedicated to providing cutting-edge AI solutions that are intuitive, powerful, and accessible. We believe in the transformative power of artificial intelligence and aim to make it available for various creative and productive tasks.</p>
+
+                <h2>The Creator</h2>
+                <p>This platform is a project by <strong>Fema Andara Haqi</strong>, a 16-year-old student passionate about AI and web development. Connect with Fema on Instagram: <strong>@femaandara_</strong> and GitHub: <strong>FemaDongz</strong>.</p>
+
+                <h2>Technology</h2>
+                <p>FlabsAI leverages modern web technologies and powerful AI models to deliver a seamless and intelligent user experience. This iteration is a demonstration of ongoing development and commitment to innovation.</p>
+
+                <h2>Feedback</h2>
+                <p>As a beta project, your feedback is invaluable. Please share any thoughts or suggestions to help improve FlabsAI.</p>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <p>&copy; <span id="currentYear"></span> FlabsAI. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="toolpage.js"></script> <!-- Generic JS for tool pages -->
+</body>
+</html>
