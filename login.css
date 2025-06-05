@@ -1,0 +1,160 @@
+/* login.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #12121a; /* Very dark blue, almost black - base for ultra modern */
+    color: #e0e0ff; /* Light lavender text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Prevent scrollbars from background elements if any */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    width: 100%;
+    padding: 20px;
+    position: relative; /* For footer positioning */
+    background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #12121a 60%);
+}
+
+.login-box {
+    background-color: rgba(30, 30, 63, 0.85); /* #1e1e3f with transparency */
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    z-index: 1;
+    border: 1px solid #3b3c6e; /* --border-color-dark */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* Animation */
+    animation: fadeInScaleUp 0.5s var(--transition-normal, 0.25s ease-in-out) forwards;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.login-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #4a47a3; /* --accent-color */
+}
+
+.login-box h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff; /* Brighter for title */
+}
+
+.login-subtitle {
+    font-size: 0.95rem;
+    color: #a0a0d0; /* --text-color-secondary-dark */
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 10px 14px 10px;
+    font-size: 1rem;
+    color: #e0e0ff; /* --text-color-dark */
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid #3b3c6e; /* --border-color-dark */
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 1rem;
+    color: #a0a0d0; /* --text-color-secondary-dark */
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+    border-color: #7879f1; /* --accent-color-light */
+    box-shadow: 0 0 0 2px rgba(120, 121, 241, 0.3);
+}
+.input-group input:focus-visible { /* Added for keyboard focus consistency */
+    border-color: #7879f1; /* --accent-color-light */
+    box-shadow: 0 0 0 3px rgba(120, 121, 241, 0.35); /* Slightly larger shadow for visibility */
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 8px;
+    font-size: 0.75rem;
+    color: #7879f1; /* --accent-color-light */
+    background-color: #232347; /* Slightly darker than card-bg for label background */
+    padding: 0 5px;
+    border-radius: 4px;
+}
+
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #4a47a3, #7879f1); /* --accent-color to --accent-color-light */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(120, 121, 241, 0.3);
+}
+
+.login-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(120, 121, 241, 0.2);
+}
+.login-button:focus-visible {
+    outline: 2px solid #7879f1; /* --accent-primary */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(120, 121, 241, 0.25);
+}
+
+.login-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #a0a0d0; /* --text-color-secondary-dark */
+    z-index: 0;
+}
+
+@keyframes fadeInScaleUp {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

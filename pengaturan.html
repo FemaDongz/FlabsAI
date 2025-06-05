@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - FlabsAI</title>
+    <link rel="stylesheet" href="core.css">
+    <link rel="stylesheet" href="pengaturan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <header class="page-header">
+            <h1>Settings</h1>
+            <a href="index.html" class="button-base button-secondary" style="font-size: 0.85rem;">Back to Chat</a>
+        </header>
+
+        <main class="page-main">
+            <div class="settings-section">
+                <h2 class="section-title">Appearance</h2>
+                <div class="setting-item">
+                    <label for="themeToggle">Theme</label>
+                    <div class="theme-switcher-placeholder">
+                        <button class="button-base theme-btn active" data-theme="dark">Dark</button>
+                        <button class="button-base theme-btn" data-theme="light">Light</button>
+                    </div>
+                    <p class="setting-description">Theme switching will be implemented later.</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">Account</h2>
+                <div class="setting-item">
+                    <label for="usernameDisplay">Current Username</label>
+                    <input type="text" id="usernameDisplay" readonly value="Guest" class="input-base" style="background-color: var(--surface-color); cursor: default;">
+                         <button id="changeUsernameBtn" class="button-base button-secondary" style="margin-top: 10px; font-size:0.8rem;">Change Username</button>
+                    <p class="setting-description">Username changing functionality will be implemented later.</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">Data Management</h2>
+                <div class="setting-item">
+                    <label>Local Data</label>
+                    <button id="clearAllDataBtn" class="button-base button-danger" style="background-color: var(--danger-color); color:white;">Clear All Local Data</button>
+                    <p class="setting-description">This will clear chat history and guest username from your browser.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <p>&copy; <span id="currentYear"></span> FlabsAI. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="pengaturan.js"></script>
+</body>
+</html>

@@ -1,62 +1,38 @@
-/* Basic Reset & Root Variables */
-:root {
-    --primary-font: 'Inter', sans-serif;
-    --bg-color-dark: #1a1a2e; /* Dark blue/purple */
-    --surface-color-dark: #1e1e3f; /* Slightly lighter surface */
-    --card-bg-dark: #272953; /* Card background */
-    --text-color-dark: #e0e0ff; /* Light lavender text */
-    --text-color-secondary-dark: #a0a0d0; /* Muted lavender */
-    --accent-color: #4a47a3; /* Indigo accent */
-    --accent-color-light: #7879f1;
-    --border-color-dark: #3b3c6e;
-    --shadow-color-dark: rgba(0, 0, 0, 0.2);
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
+/* dashboard.css */
 
-    /* Add light theme variables later if needed */
-}
-
-* {
-    box-sizing: border-box;
+/* Ensuring it uses variables from core.css */
+body { /* This is mostly for context; core.css handles actual body styles */
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    font-family: var(--font-primary);
     margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: var(--primary-font);
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
-    line-height: 1.6;
-    display: flex; /* For sticky footer */
-    flex-direction: column; /* For sticky footer */
-    min-height: 100vh; /* For sticky footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .dashboard-container {
-    width: 100%;
-    max-width: 1600px; /* Max width for the dashboard content */
-    margin: 0 auto;
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* For sticky footer */
+    min-height: 100vh;
+    width: 100%;
 }
 
-/* Header */
 .dashboard-header {
+    background-color: var(--surface-color);
+    padding: 0 25px;
+    height: var(--header-height, 65px);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border-color-dark);
-    margin-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px var(--shadow-color-soft);
 }
 
 .dashboard-header h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--text-color-dark);
+    font-size: 1.6rem;
+    color: var(--text-color-primary);
+    margin: 0;
 }
 
 .header-actions {
@@ -65,58 +41,70 @@ body {
     gap: 15px;
 }
 
-.icon-button {
-    background: none;
+.header-actions .icon-button {
+    background-color: transparent;
+    color: var(--text-color-secondary);
     border: none;
-    color: var(--text-color-secondary-dark);
-    cursor: pointer;
-    padding: 5px;
+    padding: 8px;
     border-radius: 50%;
-    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-.icon-button:hover {
-    background-color: var(--surface-color-dark);
-    color: var(--text-color-dark);
+.header-actions .icon-button:hover {
+    background-color: var(--card-bg-color); /* Using card-bg for a subtle hover */
+    color: var(--accent-primary);
+}
+.header-actions .icon-button:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 1px;
 }
 
-.icon-button svg {
-    display: block; /* Removes extra space below SVG */
-}
 
-.user-avatar {
+.header-actions .user-avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid var(--accent-color-light);
     object-fit: cover;
+    border: 2px solid var(--border-color-light);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.header-actions .user-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-primary);
 }
 
-/* Main Content Area */
+
 .dashboard-main {
-    flex-grow: 1; /* For sticky footer */
+    flex-grow: 1;
+    padding: 25px;
+    overflow-y: auto;
 }
 
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
-/* Card Styling */
 .card {
-    background-color: var(--card-bg-dark);
-    border-radius: 12px;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius-large);
     padding: 20px;
-    box-shadow: 0 4px 15px var(--shadow-color-dark);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border: 1px solid var(--border-color-dark);
+    box-shadow: 0 4px 12px var(--shadow-color-medium);
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px var(--shadow-color-dark);
+    box-shadow: 0 8px 20px var(--shadow-color-strong);
 }
+.card:active { /* Optional active state as requested */
+    transform: translateY(-2px) scale(0.99);
+    box-shadow: 0 4px 10px var(--shadow-color-medium);
+}
+
 
 .card-header {
     display: flex;
@@ -124,119 +112,102 @@ body {
     align-items: center;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color-dark);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .card-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-color-dark);
+    color: var(--text-color-primary);
+    margin: 0;
 }
 
-.card-icon { /* For icons within card headers */
-    color: var(--accent-color-light);
+.card-icon svg {
+    fill: var(--text-color-secondary);
 }
 
 .card-content p {
-    margin-bottom: 10px;
-    color: var(--text-color-secondary-dark);
     font-size: 0.9rem;
+    color: var(--text-color-secondary);
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
-
 .card-content p:last-child {
     margin-bottom: 0;
 }
 
-/* Placeholder for specific widget styles */
 .stat-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 8px 0;
-    border-bottom: 1px dashed var(--border-color-dark);
+    border-bottom: 1px solid var(--border-color-light);
+    transition: background-color var(--transition-fast); /* For potential hover */
 }
 .stat-item:last-child {
     border-bottom: none;
 }
+.stat-item:hover { /* Example hover for stat items if they were clickable */
+    background-color: rgba(255,255,255,0.03);
+}
 .stat-item .label {
-    color: var(--text-color-secondary-dark);
+    font-size: 0.85rem;
+    color: var(--text-color-secondary);
 }
 .stat-item .value {
+    font-size: 0.9rem;
     font-weight: 600;
-    color: var(--text-color-dark);
-}
-
-.activity-feed .feed-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
-    font-size: 0.85rem;
-    border-bottom: 1px dashed var(--border-color-dark);
-}
-.activity-feed .feed-item:last-child {
-    border-bottom: none;
-}
-.activity-feed .feed-item-icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: var(--surface-color-dark);
-}
-.activity-feed .feed-item-icon svg{
-     width: 14px;
-    height: 14px;
-    fill: var(--accent-color-light);
-}
-.activity-feed .feed-item-text {
-    flex-grow: 1;
-    color: var(--text-color-secondary-dark);
-}
-.activity-feed .feed-item-time {
-    font-size: 0.75rem;
-    color: var(--accent-color);
+    color: var(--text-color-primary);
 }
 
 .quick-actions-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 .quick-actions-list li a {
     display: block;
     padding: 10px 0;
-    color: var(--accent-color-light);
+    color: var(--accent-primary);
     text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px dashed var(--border-color-dark);
-    transition: color 0.2s;
+    border-bottom: 1px solid var(--border-color-light);
+    transition: color var(--transition-fast), padding-left var(--transition-fast);
 }
 .quick-actions-list li:last-child a {
     border-bottom: none;
 }
 .quick-actions-list li a:hover {
-    color: var(--text-color-dark);
+    color: var(--accent-primary-hover);
+    padding-left: 5px;
+}
+.quick-actions-list li a:focus-visible { /* Consistent with core.css links */
+    outline: 2px dashed var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-small); /* Optional: for better visual on link block */
 }
 
 
-/* Footer */
 .dashboard-footer {
+    background-color: var(--surface-color);
+    padding: 15px 25px;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 30px;
-    border-top: 1px solid var(--border-color-dark);
-    color: var(--text-color-secondary-dark);
-    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-color-secondary);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .dashboard-header h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+    .dashboard-main {
+        padding: 15px;
     }
     .dashboard-grid {
-        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+        gap: 15px;
+    }
+    .card {
+        padding: 15px;
     }
 }

@@ -1,0 +1,82 @@
+/* toolpage.css - Generic styles for tool placeholder pages */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    font-family: var(--font-primary);
+}
+.tool-page-container, .page-container /* Use .page-container if already defined in core or other CSS */ {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page-header { /* Copied from riwayat.css for consistency, can be centralized in core.css later */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+.page-header h1 {
+    color: var(--text-color-primary);
+    font-size: 1.8rem;
+}
+.page-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tool-placeholder {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-xl);
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 5px 20px var(--shadow-color-medium);
+    border: 1px solid var(--border-color);
+    max-width: 600px;
+
+    /* Animation */
+    animation: fadeInScaleUpTool 0.5s var(--transition-normal, 0.25s ease-in-out) forwards;
+    opacity: 0;
+    transform: scale(0.95);
+}
+.tool-icon-placeholder {
+    margin-bottom: 20px;
+    color: var(--accent-primary);
+}
+.tool-placeholder h2 {
+    font-size: 1.6rem;
+    color: var(--text-color-primary);
+    margin-bottom: 15px;
+}
+.tool-placeholder p {
+    color: var(--text-color-secondary);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.coming-soon-text {
+    font-weight: 600;
+    color: var(--accent-primary-hover);
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+.page-footer { /* Copied from riwayat.css for consistency */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    font-size: 0.9rem;
+}
+
+@keyframes fadeInScaleUpTool {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

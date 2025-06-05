@@ -1,0 +1,101 @@
+/* riwayat.css */
+body { /* Already in core.css, but ensures context */
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    font-family: var(--font-primary);
+}
+.page-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+.page-header h1 {
+    color: var(--text-color-primary);
+    font-size: 1.8rem;
+}
+.page-main {
+    flex-grow: 1;
+}
+.history-controls {
+    margin-bottom: 20px;
+    text-align: right;
+}
+.chat-history-list {
+    background-color: transparent; /* Let page background show */
+    border-radius: var(--border-radius-large);
+    padding: 0; /* Remove padding if entries have their own */
+}
+.history-entry {
+    background-color: var(--surface-color);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color-soft);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+.history-entry:hover {
+    background-color: var(--card-bg-color); /* Or var(--bg-color) if surface-color is card bg */
+    border-color: var(--border-color-light);
+}
+.history-entry.entry-user {
+    border-left: 4px solid var(--accent-primary);
+}
+.history-entry.entry-model {
+    border-left: 4px solid var(--text-color-tertiary);
+}
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.entry-header .role {
+    font-weight: 700; /* Bolder role */
+    font-size: 0.9rem;
+}
+.history-entry.entry-user .role {
+    color: var(--accent-primary);
+}
+.history-entry.entry-model .role {
+    color: var(--text-color-primary);
+}
+.entry-header .timestamp {
+    font-size: 0.75rem;
+    color: var(--text-color-tertiary);
+}
+.message-text { /* Renamed from .history-entry p */
+    margin: 0;
+    color: var(--text-color-secondary);
+    white-space: pre-wrap; /* Preserve line breaks */
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.no-history-message {
+    color: var(--text-color-secondary);
+    text-align: center;
+    padding: 40px 20px;
+    font-style: italic;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-medium);
+}
+.page-footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    font-size: 0.9rem;
+}
